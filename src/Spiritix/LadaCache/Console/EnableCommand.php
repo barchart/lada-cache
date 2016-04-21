@@ -25,6 +25,7 @@ class EnableCommand extends Command
      * @var string
      */
     protected $signature = 'lada-cache:enable';
+    protected $name = 'lada-cache:enable';
 
     /**
      * The console command description.
@@ -36,7 +37,7 @@ class EnableCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function fire()
     {
         if ($this->writeConfig('active', "env('LADA_CACHE_ACTIVE', true)")) {
 

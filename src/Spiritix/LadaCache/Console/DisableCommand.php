@@ -25,6 +25,7 @@ class DisableCommand extends Command
      * @var string
      */
     protected $signature = 'lada-cache:disable';
+    protected $name = 'lada-cache:disable';
 
     /**
      * The console command description.
@@ -36,7 +37,7 @@ class DisableCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function fire()
     {
         if ($this->writeConfig('active', 'false')) {
             $this->info('Cache disabled');

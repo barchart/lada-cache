@@ -27,6 +27,7 @@ class FlushCommand extends Command
      * @var string
      */
     protected $signature = 'lada-cache:flush';
+    protected $name = 'lada-cache:flush';
 
     /**
      * The console command description.
@@ -38,7 +39,7 @@ class FlushCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function fire()
     {
         $cache = app()->make('lada.cache');
         $cache->flush();
