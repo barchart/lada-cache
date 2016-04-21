@@ -56,9 +56,10 @@ class Manager
     {
         $this->reflector = $reflector;
 
-        $this->cacheActive = (bool) config('lada-cache.active');
-        $this->includeTables = (array) config('lada-cache.include-tables');
-        $this->excludeTables = (array) config('lada-cache.exclude-tables');
+        $config = \App::make('config');
+        $this->cacheActive = (bool) $config->get('lada-cache.active');
+        $this->includeTables = (array) $config->get('lada-cache.include-tables');
+        $this->excludeTables = (array) $config->get('lada-cache.exclude-tables');
     }
 
     /**

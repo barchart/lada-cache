@@ -46,17 +46,18 @@ class LadaCacheServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../../../config/' . self::CONFIG_FILE => config_path(self::CONFIG_FILE),
-        ]);
+        // $this->publishes([
+        //     __DIR__ . '/../../../config/' . self::CONFIG_FILE => config_path(self::CONFIG_FILE),
+        // ]);
 
-        $this->mergeConfigFrom(
-            __DIR__ . '/../../../config/' . self::CONFIG_FILE, str_replace('.php', '', self::CONFIG_FILE)
-        );
+        // $this->mergeConfigFrom(
+        //     __DIR__ . '/../../../config/' . self::CONFIG_FILE, str_replace('.php', '', self::CONFIG_FILE)
+        // );
 
-        if (class_exists('Barryvdh\\Debugbar\\LaravelDebugbar')) {
-            $this->registerDebugbarCollector();
-        }
+        // if (class_exists('Barryvdh\\Debugbar\\LaravelDebugbar')) {
+        //     $this->registerDebugbarCollector();
+        // }
+        $this->package('tomsisk/lada-cache');
     }
 
     /**
@@ -84,7 +85,7 @@ class LadaCacheServiceProvider extends ServiceProvider
      */
     private function registerSingletons()
     {
-        $redis = new Redis(config('lada-cache.prefix'));
+        $redis = new Redis($this->app['config']->get('lada-cache.prefix'));
         $cache = new Cache($redis, new Encoder());
         $invalidator = new Invalidator($redis);
 

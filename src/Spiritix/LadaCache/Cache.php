@@ -52,7 +52,7 @@ class Cache
         $this->redis = $redis;
         $this->encoder = $encoder;
 
-        $this->expirationTime = config('lada-cache.expiration-time');
+        $this->expirationTime = \App::make('config')->get('lada-cache.expiration-time');
     }
 
     /**

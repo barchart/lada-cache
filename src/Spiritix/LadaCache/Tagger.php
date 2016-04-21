@@ -66,7 +66,7 @@ class Tagger
         $this->reflector = $reflector;
         $this->considerTables = $considerTables;
 
-        $this->considerRows = (bool) config('lada-cache.consider-rows');
+        $this->considerRows = (bool) \App::make('config')->get('lada-cache.consider-rows');
     }
 
     /**

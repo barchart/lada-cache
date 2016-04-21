@@ -1,5 +1,5 @@
 {
-    "name": "spiritix/lada-cache",
+    "name": "barchart/lada-cache",
     "type": "library",
     "description": "A Redis based, automated and scalable database caching layer for Laravel 5.1+",
     "license": "MIT",
@@ -12,10 +12,10 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "~5.1",
-        "illuminate/database": "~5.1",
-        "illuminate/redis": "~5.1",
-        "predis/predis": "~1.0"
+        "illuminate/support": "~4.2",
+        "illuminate/database": "~4.2",
+        "illuminate/redis": "~4.2",
+        "predis/predis": "0.8.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.0",
